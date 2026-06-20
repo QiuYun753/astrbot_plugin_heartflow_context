@@ -3,6 +3,8 @@
 心流主动发言插件（Context Plus 依赖版）—— 利用 Prefix Caching 实现极低成本的智能群聊主动回复
 
 > **必须与 `astrbot_plugin_context_plus` 捆绑使用，不可单独运行。**
+本插件基于 [astrbot_plugin_heartflow](https://github.com/Soulter/astrbot_plugin_heartflow) 重构，在原心流主动发言机制的基础上，深度集成 context_plus 的聊天日志系统和 Prefix Caching 缓存优化。
+
 
 ## 核心特性
 
@@ -181,4 +183,6 @@
 
 ## 许可证
 
-本插件遵循 AstrBot 的开源许可证。
+本项目基于 **GNU Affero General Public License v3.0 (AGPL-3.0)** 发布。
+
+本插件是 [astrbot_plugin_heartflow](https://github.com/Soulter/astrbot_plugin_heartflow) 的修改衍生版本，遵循原项目的 AGPL-3.0 许可证。
