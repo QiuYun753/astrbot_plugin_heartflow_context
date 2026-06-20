@@ -1,0 +1,4 @@
+name: astrbot_plugin_heartflow_context
+description: "基于 Prefix Caching 的智能群聊主动回复插件，必须与 astrbot_plugin_context_plus 捆绑使用"
+author: 秋云
+version: 1.0.0

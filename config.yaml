@@ -1,0 +1,35 @@
+# 心流主动发言插件配置（Context Plus 依赖版）
+# 本插件必须与 astrbot_plugin_context_plus 捆绑使用
+
+# 插件启用状态
+enable_heartflow: false
+
+# 判断模型配置（必须和主模型相同，才能共享缓存）
+judge_provider_name: ""
+
+# 心流参数
+reply_threshold: 0.6  # 回复阈值（0-1，越高越严格）
+activity_target_messages: 10  # 达到满活跃度需要的消息数量
+activity_decay_rate: 0.1  # 活跃度消耗速率（每次回复后）
+activity_recovery_rate: 0.02  # 活跃度恢复速率（每分钟）
+activity_min_threshold: 0.3  # 活跃度低于此值时，回复意愿显著降低
+min_reply_interval_seconds: 20  # 最小回复间隔（秒）
+
+# 白名单配置
+whitelist_enabled: false  # 是否启用白名单
+chat_whitelist: []  # 群组白名单列表
+
+# 判断权重配置
+judge_relevance: 0.25  # 消息相关性权重
+judge_willingness: 0.2  # 回复意愿权重
+judge_social: 0.2  # 社交氛围权重
+judge_timing: 0.15  # 回复时机权重
+judge_continuity: 0.2  # 话题连贯性权重
+
+# 调试配置
+judge_include_reasoning: false  # 是否包含判断理由
+debug_thinking_mode: false  # 是否启用思考模式调试
+log_full_request: false  # 是否记录完整请求（用于调试缓存命中率）
+
+# 注意：聊天日志配置（chat_log_max_chars, chat_log_days）已自动读取 context_plus 的配置
+# 无需在此手动配置，确保与 context_plus 保持一致

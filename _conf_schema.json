@@ -1,0 +1,130 @@
+{
+    "enable_heartflow": {
+        "description": "是否启用心流主动发言功能",
+        "type": "bool",
+        "hint": "启用后，机器人会根据聊天氛围主动参与群聊",
+        "default": false
+    },
+    "judge_provider_name": {
+        "description": "判断模型提供商ID",
+        "type": "string",
+        "hint": "必须和主模型相同，才能共享 DeepSeek Prefix Caching 缓存",
+        "default": ""
+    },
+    "reply_threshold": {
+        "description": "回复阈值",
+        "type": "float",
+        "hint": "评分超过此阈值才会主动回复（0-1，越高越严格）",
+        "default": 0.6,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "activity_target_messages": {
+        "description": "活跃度目标消息数",
+        "type": "int",
+        "hint": "达到满活跃度需要的消息数量（群聊越活跃，机器人越活跃）",
+        "default": 10,
+        "minimum": 1
+    },
+    "activity_decay_rate": {
+        "description": "活跃度消耗速率",
+        "type": "float",
+        "hint": "每次回复后活跃度下降的速率",
+        "default": 0.1,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "activity_recovery_rate": {
+        "description": "活跃度恢复速率",
+        "type": "float",
+        "hint": "每分钟活跃度恢复的速率（不活跃群聊也能恢复）",
+        "default": 0.02,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "activity_min_threshold": {
+        "description": "活跃度最低阈值",
+        "type": "float",
+        "hint": "活跃度低于此值时，回复意愿显著降低（避免不活跃群聊永远不回复）",
+        "default": 0.3,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "min_reply_interval_seconds": {
+        "description": "最小回复间隔（秒）",
+        "type": "int",
+        "hint": "两次主动回复之间的最小时间间隔",
+        "default": 20,
+        "minimum": 0
+    },
+    "whitelist_enabled": {
+        "description": "是否启用白名单",
+        "type": "bool",
+        "hint": "启用后，只在白名单群组中主动发言",
+        "default": false
+    },
+    "chat_whitelist": {
+        "description": "群组白名单列表",
+        "type": "list",
+        "hint": "白名单启用时，只在这些群组中主动发言",
+        "default": []
+    },
+    "judge_relevance": {
+        "description": "消息相关性权重",
+        "type": "float",
+        "hint": "消息是否有趣、有回复价值的权重",
+        "default": 0.25,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "judge_willingness": {
+        "description": "回复意愿权重",
+        "type": "float",
+        "hint": "基于当前精力，回复意愿的权重",
+        "default": 0.2,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "judge_social": {
+        "description": "社交氛围权重",
+        "type": "float",
+        "hint": "当前氛围下回复是否合适的权重",
+        "default": 0.2,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "judge_timing": {
+        "description": "回复时机权重",
+        "type": "float",
+        "hint": "回复时机是否恰当的权重",
+        "default": 0.15,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "judge_continuity": {
+        "description": "话题连贯性权重",
+        "type": "float",
+        "hint": "与当前群聊话题的相关度权重",
+        "default": 0.2,
+        "minimum": 0.0,
+        "maximum": 1.0
+    },
+    "judge_include_reasoning": {
+        "description": "是否包含判断理由",
+        "type": "bool",
+        "hint": "启用后，日志中会显示判断理由（用于调试）",
+        "default": false
+    },
+    "debug_thinking_mode": {
+        "description": "是否启用思考模式调试",
+        "type": "bool",
+        "hint": "启用后，会检查思考模式是否关闭（用于调试）",
+        "default": false
+    },
+    "log_full_request": {
+        "description": "是否记录完整请求",
+        "type": "bool",
+        "hint": "启用后，每次判断都会记录完整的 system_prompt 和 user_content（用于调试缓存命中率）",
+        "default": false
+    }
+}
